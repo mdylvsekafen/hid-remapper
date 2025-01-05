@@ -29,6 +29,21 @@
             gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
         };
 	};
+
+	buttons {
+		compatible = "gpio-keys";
+		button0: button_0 {
+			gpios = <&gpio0 9 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "Push button switch";
+		};
+	};
+
+	/* These aliases are provided for compatibility with samples */
+	aliases {
+		led0 = &blue_led;
+		led1 = &blue_led;
+		sw0 = &button0;
+	};
 };
 
 &adc {
